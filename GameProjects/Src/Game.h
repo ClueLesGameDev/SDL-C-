@@ -19,7 +19,7 @@ class Game
 public:
 
 	Game();
-	~Game() { delete mWindow; }
+	~Game() { delete mWindow; delete mRenderer; }
 
 	bool Initialize();
 	void Run();

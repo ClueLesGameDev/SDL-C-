@@ -26,7 +26,7 @@ bool Game::Initialize()
 		return false;
 	}
 
-	mWindow = SDL_CreateWindow("Project1", 100, 30, 1024, 768, 0); //function creates a window and return a pointer to that window
+	mWindow = SDL_CreateWindow("PingPong", 100, 30, 1024, 768, 0); //function creates a window and return a pointer to that window
 	if (!mWindow)
 	{
 		SDL_Log("Failed to create window : %s", SDL_GetError());

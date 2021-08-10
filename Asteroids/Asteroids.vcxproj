@@ -18,6 +18,17 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Src\Actor.h" />
+    <ClInclude Include="Src\Game.h" />
+    <ClInclude Include="Src\Math.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Src\Actor.cpp" />
+    <ClCompile Include="Src\Game.cpp" />
+    <ClCompile Include="Src\Math.cpp" />
+    <ClCompile Include="Src\main.cpp" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
@@ -78,11 +89,13 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
-    <OutDir>$(SolutionDir)$(Platform)\$(projectName)\$(Configuration)\</OutDir>
+    <OutDir>$(SolutionDir)$(Configuration)\$(Platform)\$(projectName)</OutDir>
+    <IntDir>$(Configuration)\$(Platform)</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
-    <OutDir>$(SolutionDir)$(Platform)\$(projectName)\$(Configuration)\</OutDir>
+    <OutDir>$(SolutionDir)$(Configuration)\$(Platform)\$(projectName)</OutDir>
+    <IntDir>$(Configuration)\$(Platform)</IntDir>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
