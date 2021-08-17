@@ -17,14 +17,17 @@ public:
 	Actor(class Game* game);
 	virtual ~Actor();
 
+	//Getters and Setters
+	State Getstate() const { return mState; }
+
 	//called from the game not overridable
 	void Update(float dt);
 
 	//Updates the componenets attached to the gameobject
-	void UpdateCOmponents(float dt);
+	void UpdateComponents(float dt);
 
-	//Any actor specific updates(overriden for each actor sublass)
-	void UpdateActor(float dt);
+	//Any actor specific updates(overriden for each actor subclass)
+	virtual void UpdateActor(float dt);
 
 	//Functions to add and remove components
 	void AddComponent(class Component* component);

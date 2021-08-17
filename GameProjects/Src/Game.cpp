@@ -4,8 +4,6 @@
 const int thickness = 15;
 int mPaddleDir;
 int mPaddle_2_Dir;
-int mPaddleScore = 0;
-int mPaddle_2_Score = 0;
 const int paddleH = thickness + 100;
 
 Game::Game() : 
@@ -209,16 +207,12 @@ void Game::UpdateGame()
 		if (diff <= paddleH/2 && mBalls[i]->BallPos.x <= 25.f && mBalls[i]->BallPos.x >= 20.f && mBalls[i]->BallVel.x < 0.f)
 		{
 			mBalls[i]->BallVel.x *= -1.0f;
-			mPaddleScore += 5;
-			std::cout << "player1 Score : " << mPaddleScore << std::endl;
 		}
 
 		//ball hiting paddle2
 		if (diff2 <= paddleH/2 && mBalls[i]->BallPos.x >= (1024.f - (thickness + 5)) && mBalls[i]->BallPos.x <= (1024 - thickness) && mBalls[i]->BallVel.x > 0.f)
 		{
 			mBalls[i]->BallVel.x *= -1.0f;
-			mPaddle_2_Score += 5;
-			std::cout << "player2 Score : " << mPaddle_2_Score << std::endl;
 		}
 
 	}
