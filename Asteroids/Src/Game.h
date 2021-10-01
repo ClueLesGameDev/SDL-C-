@@ -1,7 +1,11 @@
 #pragma once
 #include<SDL.h>
 #include<SDL_image.h>
-#include "Actor.h"
+#include<unordered_map>
+
+#include"Actor.h"
+#include"SpriteComponent.h"
+
 
 class Game
 {
@@ -22,7 +26,10 @@ protected:
 	void AddActor(Actor* actor);
 	void RemoveActor(Actor* actor) {};
 
-	SDL_Texture* LoadTex(const char* fileName);
+	void AddSprite(SpriteComponent* sprite);
+	void RemoveSprite(SpriteComponent* sprite) {};
+
+	SDL_Texture* GenerateTex(const std::string& fileName);
 
 	bool mIsRunning;
 	bool mIsUpdatingActors;			//to see wether the actors are getting updated and is iterating.
@@ -32,6 +39,10 @@ protected:
 
 	std::vector<Actor*> mActors;
 	std::vector<Actor*> mPendingActors;
+
+	std::vector<SpriteComponent*> mSprites;
+
+	std::unordered_map<std::string, SDL_Texture*> mTextures;
 
 	Uint32 mTicksCount;
 };

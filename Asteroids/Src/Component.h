@@ -1,10 +1,12 @@
 #pragma once
+#include "Actor.h"
 
-class Componenent
+class Component
 {
 public:
-	Componenent(class Actor* owner, int updateOrder = 100);		// the lower the update order the earlier it will get updated
-	virtual ~Componenent();
+	Component(class Actor* owner, int updateOrder = 100);		// the lower the update order the earlier it will get updated
+	
+	virtual ~Component();
 
 	virtual void Update(float dt);
 
@@ -12,7 +14,7 @@ public:
 
 protected:
 
-	class Actor* mOwner;
+	Actor* mOwner;
 
 	int mUpdateOrder;
 };

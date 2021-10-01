@@ -170,26 +170,63 @@ void Game::AddActor(Actor* actor)
 	}
 }
 
-//encapsulating loading texture from surface into a single function
-SDL_Texture* Game::LoadTex(const char* fileName)
+//encapsulating checking, saving, converting and loading texture into a single function
+SDL_Texture* Game::GenerateTex(const std::string& fileName)
 {
-	SDL_Surface* surface = IMG_Load(fileName);
+	//initially set as nullptr
+	SDL_Texture* tex = nullptr;
+
+	//checking if texture already loaded
+	auto iter = mTextures.find(fileName);
 	
-	if (!surface)
+	if (iter != mTextures.end())
 	{
-		SDL_Log("Couldn't load texture : %s", fileName);
-		return nullptr;
+		tex = iter->second;
 	}
 
-	//creating texture from surface
-	SDL_Texture* tex = SDL_CreateTextureFromSurface(mRenderer, surface);
-	SDL_FreeSurface(surface);
-
-	if (!tex)
+	else
 	{
-		SDL_Log("Couldnt convert texture from surface : %s", fileName);
-		return nullptr;
-	}
+		//load from file
+		SDL_Surface* surface = IMG_Load(fileName.c_str());
+		if (!surface)
+		{
+			SDL_Log("Couldn't load texture : %s", fileName);
+			return nullptr;
+		}
 
+		//creating texture from surface
+		tex = SDL_CreateTextureFromSurface(mRenderer, surface);
+		SDL_FreeSurface(surface);
+
+		if (!tex)
+		{
+			SDL_Log("Couldnt convert texture from surface : %s", fileName);
+			return nullptr;
+		}
+
+		mTextures.emplace(fileName.c_str(), tex);
+	}
+	
 	return tex;
+}
+
+void Game::AddSprite(SpriteComponent* sprite)
+{
+	//sprites should be added to the list in order of their drawOrder
+	//each time called the sprites draw in the same order
+
+	int currentOrder = sprite->GetDrawOrder();
+	auto iter = mSprites.begin();
+
+    //checking if current draw order comes before any of sprites
+	for ( ; iter != mSprites.end(); ++iter)
+	{
+		if (currentOrder < (*iter)->GetDrawOrder())
+		{
+			break;
+		}
+	}
+
+	//inserting at iter position
+	mSprites.insert(iter, sprite);
 }

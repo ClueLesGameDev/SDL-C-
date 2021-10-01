@@ -1,6 +1,7 @@
 #pragma once
 #include<vector>
 #include"Math.h"
+#include <SDL.h>
 class Actor
 {
 public:
@@ -18,7 +19,10 @@ public:
 	virtual ~Actor();
 
 	//Getters and Setters
-	State Getstate() const { return mState; }
+	State		Getstate() const	{ return mState; }
+	float		GetScale() const	{ return mScale; }
+	Vector2		GetPosition() const { return mPosition; }
+	float		GetRoation() const	{ return mRotation; }		//returns angle in radian
 
 	//called from the game not overridable
 	void Update(float dt);
@@ -35,6 +39,7 @@ public:
 
 private:
 
+	//CUrrent state of the gameobject
 	State mState;
 
 	std::vector<class component*> mComponents;
@@ -42,8 +47,7 @@ private:
 	class Game* mGame;
 
 	//Transform properties
-	Vector2 mTranslate;
-
+	Vector2 mPosition;
 	float mRotation;
 	float mScale;
 
