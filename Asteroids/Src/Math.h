@@ -17,13 +17,20 @@ namespace Math
 	{
 		return radians * 180.0f / pi;
 	}
+
+	inline float Sqrt(float val)
+	{
+		return sqrtf(val);
+	}
+
+	inline 
 };
 
 //------------------------------------------------------------------------------
 
 
 
-//2d Vector class---------------------------------------------------
+//2D Vector class---------------------------------------------------
 
 class Vector2 
 {
@@ -41,16 +48,69 @@ public:
 		return { x - val.x, y - val.y };
 	}
 
-	Vector2 operator*(const Vector2& val)
+	//Scalar multiplication
+	Vector2 operator*(const float val)
 	{
-		return { x * val.x, y * val.y };
+		return { x * val, y * val };
 	}
 
 	//------------------------------------------------------------------
 
+	float LengthSqr()
+	{
+		return (x * x + y * y);
+	}
+
+	float Length()
+	{
+		return (Math::Sqrt(LengthSqr()));
+	}
+
+	//normalizing the vector erasing the magnitude
+	void Normalize()
+	{
+		x /= Length();
+		y /= Length();
+	}
+	
+	//static function returning the normalized value without changing the actual vectors
+	static Vector2 Normalize(const Vector2& val)
+	{
+		Vector2 temp = val;
+		temp.Normalize();
+		return temp;
+	}
 	
 	float x = 0;
 	float y = 0;
 };
 
 //----------------------------------------------------------------------
+
+//3D  Vector Class----------------------------------------------------------
+
+class Vector3
+{
+public:
+
+	//Basic vector operations
+	Vector3 operator+(const Vector3& val)
+	{
+		return { x + val.x, y + val.y, z + val.z };
+	}
+
+	Vector3 operator-(const Vector3& val)
+	{
+		return { x - val.x, y - val.y, z - val.z };
+	}
+
+	//Scalar multiplicaton
+	Vector3 operator*(const float val)
+	{
+		return { x * val, y * val, z * val };
+	}
+
+	float x = 0; 
+	float y = 0;
+	float z = 0;
+};

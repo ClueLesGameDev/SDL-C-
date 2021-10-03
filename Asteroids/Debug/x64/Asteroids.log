@@ -1,12 +1,59 @@
 ﻿C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppBuild.targets(504,5): warning MSB8004: Intermediate Directory does not end with a trailing slash.  This build instance will add the slash as it is required to allow proper evaluation of the Intermediate Directory.
 C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppBuild.targets(505,5): warning MSB8004: Output Directory does not end with a trailing slash.  This build instance will add the slash as it is required to allow proper evaluation of the Output Directory.
+  BGSpriteComponent.cpp
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29910\include\xmemory(696,82): error C2440: 'initializing': cannot convert from 'BGSpriteComponent::BGTexture' to '_Objty'
+          with
+          [
+              _Objty=BGSpriteComponent::BGTexture *
+          ]
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29910\include\xmemory(696,82): message : No user-defined-conversion operator available that can perform this conversion, or the operator cannot be called
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29910\include\vector(689): message : see reference to function template instantiation 'void std::_Default_allocator_traits<_Alloc>::construct<_Ty,BGSpriteComponent::BGTexture&>(_Alloc &,_Objty *const ,BGSpriteComponent::BGTexture &)' being compiled
+          with
+          [
+              _Alloc=std::allocator<BGSpriteComponent::BGTexture *>,
+              _Ty=BGSpriteComponent::BGTexture *,
+              _Objty=BGSpriteComponent::BGTexture *
+          ]
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29910\include\vector(694): message : see reference to function template instantiation 'void std::_Default_allocator_traits<_Alloc>::construct<_Ty,BGSpriteComponent::BGTexture&>(_Alloc &,_Objty *const ,BGSpriteComponent::BGTexture &)' being compiled
+          with
+          [
+              _Alloc=std::allocator<BGSpriteComponent::BGTexture *>,
+              _Ty=BGSpriteComponent::BGTexture *,
+              _Objty=BGSpriteComponent::BGTexture *
+          ]
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29910\include\vector(707): message : see reference to function template instantiation 'void std::vector<BGSpriteComponent::BGTexture *,std::allocator<BGSpriteComponent::BGTexture *>>::_Emplace_back_with_unused_capacity<BGSpriteComponent::BGTexture&>(BGSpriteComponent::BGTexture &)' being compiled
+D:\GIt\GameProjects\Asteroids\Src\BGSpriteComponent.cpp(18): message : see reference to function template instantiation 'void std::vector<BGSpriteComponent::BGTexture *,std::allocator<BGSpriteComponent::BGTexture *>>::emplace_back<BGSpriteComponent::BGTexture&>(BGSpriteComponent::BGTexture &)' being compiled
+  AnimationComponent.cpp
   Actor.cpp
   Game.cpp
 D:\GIt\GameProjects\Asteroids\Src\Game.cpp(10,16): warning C4150: deletion of pointer to incomplete type 'SDL_Window'; no destructor called
 D:\GIt\GameProjects\External Dependencies\SDL_2.0\include\SDL_video.h(90): message : see declaration of 'SDL_Window'
 D:\GIt\GameProjects\Asteroids\Src\Game.cpp(11,18): warning C4150: deletion of pointer to incomplete type 'SDL_Renderer'; no destructor called
 D:\GIt\GameProjects\External Dependencies\SDL_2.0\include\SDL_render.h(132): message : see declaration of 'SDL_Renderer'
+D:\GIt\GameProjects\Asteroids\Src\Game.cpp(100,18): warning C4244: 'initializing': conversion from 'Uint32' to 'float', possible loss of data
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29910\include\xmemory(696,82): error C2440: 'initializing': cannot convert from 'std::vector<Actor *,std::allocator<Actor *>>' to '_Objty'
+          with
+          [
+              _Objty=Actor *
+          ]
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29910\include\xmemory(696,82): message : No user-defined-conversion operator available that can perform this conversion, or the operator cannot be called
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29910\include\vector(689): message : see reference to function template instantiation 'void std::_Default_allocator_traits<_Alloc>::construct<_Ty,std::vector<_Ty,_Alloc>&>(_Alloc &,_Objty *const ,std::vector<_Ty,_Alloc> &)' being compiled
+          with
+          [
+              _Alloc=std::allocator<Actor *>,
+              _Ty=Actor *,
+              _Objty=Actor *
+          ]
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29910\include\vector(694): message : see reference to function template instantiation 'void std::_Default_allocator_traits<_Alloc>::construct<_Ty,std::vector<_Ty,_Alloc>&>(_Alloc &,_Objty *const ,std::vector<_Ty,_Alloc> &)' being compiled
+          with
+          [
+              _Alloc=std::allocator<Actor *>,
+              _Ty=Actor *,
+              _Objty=Actor *
+          ]
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29910\include\vector(707): message : see reference to function template instantiation 'void std::vector<Actor *,std::allocator<Actor *>>::_Emplace_back_with_unused_capacity<std::vector<Actor *,std::allocator<Actor *>>&>(std::vector<Actor *,std::allocator<Actor *>> &)' being compiled
+D:\GIt\GameProjects\Asteroids\Src\Game.cpp(135): message : see reference to function template instantiation 'void std::vector<Actor *,std::allocator<Actor *>>::emplace_back<std::vector<Actor *,std::allocator<Actor *>>&>(std::vector<Actor *,std::allocator<Actor *>> &)' being compiled
   Math.cpp
   main.cpp
+  SpriteComponent.cpp
   Generating Code...
-  Asteroids.vcxproj -> D:\GIt\GameProjects\Debug\x64\Asteroids\Asteroids.exe
