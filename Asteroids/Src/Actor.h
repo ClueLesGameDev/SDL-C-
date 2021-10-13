@@ -20,10 +20,16 @@ public:
 
 	//Getters and Setters
 	State		Getstate() const	{ return mState; }
-	float		GetScale() const	{ return mScale; }
-	Vector2		GetPosition() const { return mPosition; }
-	float		GetRoation() const	{ return mRotation; }		//returns angle in radian
 
+	float		GetScale() const	{ return mScale; }
+	void		SetScale(float scale) { mScale = scale; }
+
+	Vector2		GetPosition() const { return mPosition; }
+	
+	float		GetRoation() const	{ return mRotation; }		//returns angle in radian
+	void		SetRoation(float rotVal) { mRotation = rotVal; }
+
+	void		SetPosition(Vector2 position) { mPosition = position; }
 	//called from the game not overridable
 	void Update(float dt);
 
@@ -37,12 +43,9 @@ public:
 	void AddComponent(class Component* component);
 	void RemoveComponent(class Component* component);
 
-	//temp function to return the rotted value.
-	Vector3 GetForward() const
-	{
-		//SDL graphics use +ve y axis through downward direction use negative axis
-		return Vector3{ Math::Cos(mRotation), -Math::Sin(mRotation), 0};
-	}
+	//temp function to return the rotated value.
+	Vector2 GetForward() const;
+	
 
 private:
 

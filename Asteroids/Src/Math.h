@@ -23,6 +23,20 @@ namespace Math
 		return sqrtf(val);
 	}
 
+	inline bool NearZero(float val, float epsilon = .001f)		// to check a val is near to zero
+	{
+		if (val <= epsilon)
+		{
+			return true;
+		}
+		
+		else
+		{
+			return false;
+		}
+			
+	}
+
 	inline float Cos(float angle)
 	{
 		return cosf(angle);

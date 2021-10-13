@@ -23,8 +23,6 @@ C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.2
           ]
 C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29910\include\vector(707): message : see reference to function template instantiation 'void std::vector<BGSpriteComponent::BGTexture *,std::allocator<BGSpriteComponent::BGTexture *>>::_Emplace_back_with_unused_capacity<BGSpriteComponent::BGTexture&>(BGSpriteComponent::BGTexture &)' being compiled
 D:\GIt\GameProjects\Asteroids\Src\BGSpriteComponent.cpp(18): message : see reference to function template instantiation 'void std::vector<BGSpriteComponent::BGTexture *,std::allocator<BGSpriteComponent::BGTexture *>>::emplace_back<BGSpriteComponent::BGTexture&>(BGSpriteComponent::BGTexture &)' being compiled
-  AnimationComponent.cpp
-  Actor.cpp
   Game.cpp
 D:\GIt\GameProjects\Asteroids\Src\Game.cpp(10,16): warning C4150: deletion of pointer to incomplete type 'SDL_Window'; no destructor called
 D:\GIt\GameProjects\External Dependencies\SDL_2.0\include\SDL_video.h(90): message : see declaration of 'SDL_Window'
@@ -53,7 +51,5 @@ C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.2
           ]
 C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29910\include\vector(707): message : see reference to function template instantiation 'void std::vector<Actor *,std::allocator<Actor *>>::_Emplace_back_with_unused_capacity<std::vector<Actor *,std::allocator<Actor *>>&>(std::vector<Actor *,std::allocator<Actor *>> &)' being compiled
 D:\GIt\GameProjects\Asteroids\Src\Game.cpp(135): message : see reference to function template instantiation 'void std::vector<Actor *,std::allocator<Actor *>>::emplace_back<std::vector<Actor *,std::allocator<Actor *>>&>(std::vector<Actor *,std::allocator<Actor *>> &)' being compiled
-  Math.cpp
-  main.cpp
   SpriteComponent.cpp
   Generating Code...

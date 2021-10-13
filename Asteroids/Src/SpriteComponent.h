@@ -6,7 +6,7 @@ class SpriteComponent : public Component
 {
 public:
 
-	SpriteComponent(class Actor* owner, int drawOrder = 100);		//drawOrder to implement painters algorithm
+	SpriteComponent(Actor* owner, int drawOrder = 100);		//drawOrder to implement painters algorithm
 	~SpriteComponent();
 
 	//Getters and Setters

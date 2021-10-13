@@ -4,7 +4,7 @@
 class Component
 {
 public:
-	Component(class Actor* owner, int updateOrder = 100);		// the lower the update order the earlier it will get updated
+	Component(Actor* owner, int updateOrder = 100);		// the lower the update order the earlier it will get updated
 	
 	virtual ~Component();
 
