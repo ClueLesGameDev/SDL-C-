@@ -204,18 +204,22 @@ void Game::UpdateGame()
 		diff2 = (diff2 > 0.0f) ? diff2 : -diff2;
 
 		//ball hitting paddle
-		if (diff <= paddleH/2 && mBalls[i]->BallPos.x <= 25.f && mBalls[i]->BallPos.x >= 20.f && mBalls[i]->BallVel.x < 0.f)
+		if (diff <= paddleH && mBalls[i]->BallPos.x < (mPaddlePos.x + thickness / 2) && mBalls[i]->BallPos.x > thickness/2 )
 		{
 			mBalls[i]->BallVel.x *= -1.0f;
+			mBalls[i]->BallVel.y = mBalls[i]->BallVel.y + mPaddlePos.y / 100;
 		}
 
+
 		//ball hiting paddle2
-		if (diff2 <= paddleH/2 && mBalls[i]->BallPos.x >= (1024.f - (thickness + 5)) && mBalls[i]->BallPos.x <= (1024 - thickness) && mBalls[i]->BallVel.x > 0.f)
+		if (diff2 <= paddleH && mBalls[i]->BallPos.x > 1024 - (mPaddlePos.x + thickness / 2) && mBalls[i]->BallPos.x < (1024 - thickness / 2))
 		{
 			mBalls[i]->BallVel.x *= -1.0f;
+			mBalls[i]->BallVel.y += (mBalls[i]->BallVel.y - mPaddle_2_Pos.y) / 100;
 		}
 
 	}
+
 	
 
 }
