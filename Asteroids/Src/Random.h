@@ -17,14 +17,17 @@ public:
 	static float GetRandomFloat();
 
 	//Get a random float b/w a certain range
-	static float GetRandomRangeFloat(float& min, float& max);
+	static float GetRandomRangeFloat(float min, float max);
 
 	//Get a random int b/w a certain range
-	static int GetRandomRangeInt(int& min, int& max);
+	static int GetRandomRangeInt(int min, int max);
 
 	//Get a random vector b/w a certain range
 	static Vector2 GetRandomRangeVector(Vector2& min, Vector2& max);
 	static Vector3 GetRandomRangeVector(Vector3& min, Vector3& max);
+
+private:
+	static std::mt19937 sGen;
 
 
 };

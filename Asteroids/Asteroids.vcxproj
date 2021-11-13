@@ -38,6 +38,7 @@
     <ClCompile Include="Src\Component.cpp" />
     <ClCompile Include="Src\Game.cpp" />
     <ClCompile Include="Src\main.cpp" />
+    <ClCompile Include="Src\Math.cpp" />
     <ClCompile Include="Src\MoveComponent.cpp" />
     <ClCompile Include="Src\Random.cpp" />
     <ClCompile Include="Src\SpriteComponent.cpp" />
