@@ -1,4 +1,6 @@
 #include "Game.h"
+#include"Actor.h"
+#include"SpriteComponent.h"
 
 Game::Game() : mWindow(NULL), mRenderer(NULL)
 {

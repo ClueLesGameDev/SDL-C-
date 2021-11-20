@@ -3,6 +3,8 @@
 
 class MoveComponent : public Component
 {
+public:
+
 	MoveComponent(Actor* owner, int updateOrder = 10);
 
 	virtual void Update(float dt) override;

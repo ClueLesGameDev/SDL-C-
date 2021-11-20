@@ -23,8 +23,8 @@ public:
 	static int GetRandomRangeInt(int min, int max);
 
 	//Get a random vector b/w a certain range
-	static Vector2 GetRandomRangeVector(Vector2& min, Vector2& max);
-	static Vector3 GetRandomRangeVector(Vector3& min, Vector3& max);
+	static Vector2 GetRandomRangeVector(const Vector2& min, const Vector2& max);
+	static Vector3 GetRandomRangeVector(const Vector3& min, const Vector3& max);
 
 private:
 	static std::mt19937 sGen;

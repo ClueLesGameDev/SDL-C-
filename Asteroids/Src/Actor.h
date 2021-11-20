@@ -1,6 +1,7 @@
 #pragma once
-#include<vector>
-#include"Math.h"
+#include <vector>
+#include "Math.h"
+#include "Game.h"
 #include <SDL.h>
 class Actor
 {
@@ -15,7 +16,7 @@ public:
 
 	};
 
-	Actor(class Game* game);
+	Actor(Game* game);
 	virtual ~Actor();
 
 	//Getters and Setters
@@ -30,6 +31,15 @@ public:
 	void		SetRoation(float rotVal) { mRotation = rotVal; }
 
 	void		SetPosition(Vector2 position) { mPosition = position; }
+
+	//function to return the rotated value.
+	Vector2 GetForward() const
+	{
+		//SDL graphics use +ve y axis through downward direction use negative axis
+		return Vector2{ Math::Cos(mRotation), -Math::Sin(mRotation) };
+	}
+
+
 	//called from the game not overridable
 	void Update(float dt);
 
@@ -41,24 +51,16 @@ public:
 
 	//Functions to add and remove components
 	void AddComponent(class Component* component);
-	void RemoveComponent(class Component* component);
-
-	//temp function to return the rotated value.
-	Vector2 GetForward() const
-	{
-		//SDL graphics use +ve y axis through downward direction use negative axis
-		return Vector2{ Math::Cos(mRotation), -Math::Sin(mRotation) };
-	}
-	
+	void RemoveComponent(class Component* component);	
 
 private:
 
 	//CUrrent state of the gameobject
 	State mState;
 
-	std::vector<class component*> mComponents;
+	std::vector<class Component*> mComponents;
 
-	class Game* mGame;
+	Game* mGame;
 
 	//Transform properties
 	Vector2 mPosition;

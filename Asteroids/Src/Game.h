@@ -3,9 +3,6 @@
 #include<SDL_image.h>
 #include<unordered_map>
 
-#include"Actor.h"
-#include"SpriteComponent.h"
-
 
 class Game
 {
@@ -17,19 +14,20 @@ public:
 	void Run();
 	void Exit();
 
-protected:
-
-	void InputProcess();
-	void Update();
-	void GenOutput() {};
 
 	void AddActor(Actor* actor);
 	void RemoveActor(Actor* actor) {};
 
-	void AddSprite(SpriteComponent* sprite);
-	void RemoveSprite(SpriteComponent* sprite) {};
+	void AddSprite(class SpriteComponent* sprite);
+	void RemoveSprite(class SpriteComponent* sprite) {};
 
 	SDL_Texture* GenerateTex(const std::string& fileName);
+
+private:
+
+	void InputProcess();
+	void Update();
+	void GenOutput() {};
 
 	bool mIsRunning;
 	bool mIsUpdatingActors;			//to see wether the actors are getting updated and is iterating.

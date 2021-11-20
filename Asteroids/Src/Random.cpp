@@ -28,15 +28,15 @@ int Random::GetRandomRangeInt(int min, int max)
 	return dist(sGen);
 }
 
-Vector2 Random::GetRandomRangeVector(Vector2& min, Vector2& max)
+Vector2 Random::GetRandomRangeVector(const Vector2& min, const Vector2& max)
 {
-	Vector2 r = { GetRandomFloat(), GetRandomFloat() };
+	Vector2 r = Vector2( GetRandomFloat(), GetRandomFloat() );
 	return min + (max - min) * r;
 }
 
-Vector3 Random::GetRandomRangeVector(Vector3& min, Vector3& max)
+Vector3 Random::GetRandomRangeVector(const Vector3& min, const Vector3& max)
 {
-	Vector3 r = { GetRandomFloat(), GetRandomFloat(), GetRandomFloat() };
+	Vector3 r = Vector3( GetRandomFloat(), GetRandomFloat(), GetRandomFloat() );
 	return min + (max - min) * r;
 }
 
