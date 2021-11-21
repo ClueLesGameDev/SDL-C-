@@ -6,7 +6,7 @@ class Asteroid : public Actor
 {
 public:
 
-	Asteroid(Game* game) : Actor(game) {};
+	Asteroid(class Game* game);
 
 	~Asteroid() {};
 };

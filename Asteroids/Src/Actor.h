@@ -1,8 +1,8 @@
 #pragma once
 #include <vector>
 #include "Math.h"
-#include "Game.h"
 #include <SDL.h>
+#include <cstdint>
 class Actor
 {
 public:
@@ -16,7 +16,7 @@ public:
 
 	};
 
-	Actor(Game* game);
+	Actor(class Game* game);
 	virtual ~Actor();
 
 	//Getters and Setters
@@ -39,6 +39,8 @@ public:
 		return Vector2{ Math::Cos(mRotation), -Math::Sin(mRotation) };
 	}
 
+	//Inputprocess function called from game(not overrdable)
+	void InputProcess(const uint8_t* keyState);
 
 	//called from the game not overridable
 	void Update(float dt);
@@ -60,7 +62,7 @@ private:
 
 	std::vector<class Component*> mComponents;
 
-	Game* mGame;
+	class Game* mGame;
 
 	//Transform properties
 	Vector2 mPosition;

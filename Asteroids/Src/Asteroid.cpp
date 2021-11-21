@@ -1,4 +1,5 @@
 #include "Asteroid.h"
+#include "Game.h"
 #include "Random.h"
 #include "SpriteComponent.h"
 #include "MoveComponent.h"

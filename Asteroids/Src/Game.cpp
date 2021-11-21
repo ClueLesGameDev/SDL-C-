@@ -1,8 +1,13 @@
+#include <algorithm>
 #include "Game.h"
-#include"Actor.h"
-#include"SpriteComponent.h"
+#include "Actor.h"
+#include "Asteroid.h"
+#include "SpriteComponent.h"
+#include "Random.h"
 
-Game::Game() : mWindow(NULL), mRenderer(NULL)
+Game::Game() 
+	: mWindow(nullptr), mRenderer(nullptr),
+	  mIsRunning(true), mIsUpdatingActors(false)
 {
 	
 }
@@ -45,11 +50,11 @@ bool Game::Initialize()
 		SDL_Log("Unable to initilaise the SDL_Image! : %s", SDL_GetError());
 		return false;
 	}
-		
-	mIsRunning = true;
-	mIsUpdatingActors = false;
+	Random::Init();
 
-	mTicksCount = 0;
+	LoadData();
+
+	mTicksCount = SDL_GetTicks();
 
 	return true;
 
@@ -82,14 +87,23 @@ void Game::InputProcess()
 	}
 
 	//getting the whole state of keyboard
-	const Uint8* state = SDL_GetKeyboardState(NULL);  //pointer to an array of all the keys in the keyboard.
+	const Uint8* keyState = SDL_GetKeyboardState(NULL);  //pointer to an array of all the keys in the keyboard.
 
 	//indexing through for specific key in the array to see if it is set true(or event is assossiated)
 
-	if (state[SDL_SCANCODE_ESCAPE])
+	if (keyState[SDL_SCANCODE_ESCAPE])
 	{
 		mIsRunning = false;
 	}
+
+	mIsUpdatingActors = true;
+	
+	for (auto actor : mActors)
+	{
+		actor->InputProcess(keyState);
+	}
+
+	mIsUpdatingActors = false;
 }
 
 void Game::Update()
@@ -143,6 +157,48 @@ void Game::Update()
 	{
 		delete actor;
 	}
+}
+
+void Game::GenOutput()
+{
+	SDL_SetRenderDrawColor(mRenderer, 220, 220, 220, 255);
+	SDL_RenderClear(mRenderer);
+
+	// Draw all sprite components
+	for (auto sprite : mSprites)
+	{
+		sprite->Draw(mRenderer);
+	}
+
+	SDL_RenderPresent(mRenderer);
+}
+
+void Game::LoadData()
+{
+	const int numAsteroids = 20;
+
+	for (int i = 0; i < numAsteroids; i++)
+	{
+		new Asteroid(this);
+	}
+}
+
+void Game::UnloadData()
+{
+	// Delete actors
+	// Because ~Actor calls RemoveActor, have to use a different style loop
+	while (!mActors.empty())
+	{
+		delete mActors.back();
+	}
+
+	// Destroy textures
+	for (auto i : mTextures)
+	{
+		SDL_DestroyTexture(i.second);
+	}
+	mTextures.clear();
+	mTextures.clear();
 }
 
 void Game::Exit()
@@ -210,6 +266,21 @@ SDL_Texture* Game::GenerateTex(const std::string& fileName)
 	}
 	
 	return tex;
+}
+
+void Game::AddAsteroid(Asteroid* ast)
+{
+	mAsteroids.emplace_back(ast);
+}
+
+void Game::RemoveAsteroid(Asteroid* ast)
+{
+	auto iter = std::find(mAsteroids.begin(),
+		mAsteroids.end(), ast);
+	if (iter != mAsteroids.end())
+	{
+		mAsteroids.erase(iter);
+	}
 }
 
 void Game::AddSprite(SpriteComponent* sprite)

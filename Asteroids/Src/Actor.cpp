@@ -22,6 +22,17 @@ Actor::~Actor()
 	}
 }
 
+void Actor::InputProcess(const uint8_t* keyState)
+{
+	if (mState == EActive)
+	{
+		for (auto comp : mComponents)
+		{
+			comp->InputProcess(keyState);
+		}
+	}
+}
+
 void Actor::Update(float dt)
 {
 	if (mState == EActive)

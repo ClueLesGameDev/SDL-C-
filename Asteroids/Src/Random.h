@@ -11,7 +11,7 @@ public:
 	static void Init();
 
 	//Seed the generator with the specified int. (not used manually)
-	static void Seed(unsigned int seed);//?
+	static void Seed(unsigned int seed);
 
 	//Get a random float b/w 0.0f and 1.0f
 	static float GetRandomFloat();

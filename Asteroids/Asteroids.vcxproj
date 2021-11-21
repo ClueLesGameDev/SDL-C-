@@ -20,8 +20,6 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Src\Asteroid.h" />
-    <ClInclude Include="Src\BGSpriteComponent.h" />
-    <ClInclude Include="Src\AnimationComponent.h" />
     <ClInclude Include="Src\Actor.h" />
     <ClInclude Include="Src\Component.h" />
     <ClInclude Include="Src\Game.h" />
@@ -32,8 +30,6 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Src\Asteroid.cpp" />
-    <ClCompile Include="Src\BGSpriteComponent.cpp" />
-    <ClCompile Include="Src\AnimationComponent.cpp" />
     <ClCompile Include="Src\Actor.cpp" />
     <ClCompile Include="Src\Component.cpp" />
     <ClCompile Include="Src\Game.cpp" />

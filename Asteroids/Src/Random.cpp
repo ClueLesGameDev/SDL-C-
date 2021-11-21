@@ -24,7 +24,7 @@ float Random::GetRandomRangeFloat(float min, float max)
 
 int Random::GetRandomRangeInt(int min, int max)
 {
-	std::uniform_real_distribution<int> dist(min, max);
+	std::uniform_int_distribution<int> dist(min, max);
 	return dist(sGen);
 }
 
@@ -40,3 +40,4 @@ Vector3 Random::GetRandomRangeVector(const Vector3& min, const Vector3& max)
 	return min + (max - min) * r;
 }
 
+std::mt19937 Random::sGen;
