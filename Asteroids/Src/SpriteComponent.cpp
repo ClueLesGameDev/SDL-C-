@@ -1,4 +1,6 @@
 #include "SpriteComponent.h"
+#include "Actor.h"
+#include "SDL_image.h"
 
 void SpriteComponent::SetTexture(SDL_Texture* texture)
 {

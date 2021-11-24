@@ -5,4 +5,10 @@ D:\GIt\GameProjects\GameProjects\Src\Game.h(22,10): warning C4150: deletion of p
 D:\GIt\GameProjects\External Dependencies\SDL_2.0\include\SDL_video.h(90): message : see declaration of 'SDL_Window'
 D:\GIt\GameProjects\GameProjects\Src\Game.h(22,10): warning C4150: deletion of pointer to incomplete type 'SDL_Renderer'; no destructor called
 D:\GIt\GameProjects\External Dependencies\SDL_2.0\include\SDL_render.h(132): message : see declaration of 'SDL_Renderer'
+  main.cpp
+D:\GIt\GameProjects\GameProjects\Src\Game.h(22,10): warning C4150: deletion of pointer to incomplete type 'SDL_Window'; no destructor called
+D:\GIt\GameProjects\External Dependencies\SDL_2.0\include\SDL_video.h(90): message : see declaration of 'SDL_Window'
+D:\GIt\GameProjects\GameProjects\Src\Game.h(22,10): warning C4150: deletion of pointer to incomplete type 'SDL_Renderer'; no destructor called
+D:\GIt\GameProjects\External Dependencies\SDL_2.0\include\SDL_render.h(132): message : see declaration of 'SDL_Renderer'
+  Generating Code...
   GameProjects.vcxproj -> D:\GIt\GameProjects\Debug\x64\PingPong\PingPong.exe

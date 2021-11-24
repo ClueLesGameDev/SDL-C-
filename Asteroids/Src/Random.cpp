@@ -1,5 +1,6 @@
 #include "Random.h"
 
+
 void Random::Init()
 {
 	std::random_device rd;

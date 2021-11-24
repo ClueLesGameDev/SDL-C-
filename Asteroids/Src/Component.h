@@ -1,10 +1,10 @@
 #pragma once
-#include "Actor.h"
+#include <cstdint>
 
 class Component
 {
 public:
-	Component(Actor* owner, int updateOrder = 100);		// the lower the update order the earlier it will get updated
+	Component(class Actor* owner, int updateOrder = 100);		// the lower the update order the earlier it will get updated
 	
 	virtual ~Component();
 
@@ -17,7 +17,7 @@ public:
 
 protected:
 
-	Actor* mOwner;
+	class Actor* mOwner;
 
 	int mUpdateOrder;
 };

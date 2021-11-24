@@ -10,9 +10,9 @@ public:
 	~SpriteComponent();
 
 	//Getters and Setters
-	virtual void SetTexture(SDL_Texture* texture);
+	virtual void SetTexture(class SDL_Texture* texture);
 
-	virtual void Draw(SDL_Renderer* renderer);
+	virtual void Draw(class SDL_Renderer* renderer);
 
 	int GetDrawOrder() const { return mDrawOrder; }
 	int GetTexHeight() const { return mTexHeight; }
@@ -20,7 +20,7 @@ public:
 
 protected:
 
-	SDL_Texture* mTexture;
+	class SDL_Texture* mTexture;
 
 	int mDrawOrder;
 	int mTexHeight;
