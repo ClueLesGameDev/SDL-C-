@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "e0d4c1e2-a617-4788-b19e-706fec4da181": {
+      "ProjectGuid": "e0d4c1e2-a617-4788-b19e-706fec4da181",
+      "DisplayName": "Asteroids",
+      "ColorIndex": 0
+    }
+  },
+  "NextColorIndex": 1
+}
