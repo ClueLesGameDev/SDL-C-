@@ -19,6 +19,8 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Src\CircleComponent.h" />
+    <ClInclude Include="Src\InputComponent.h" />
     <ClInclude Include="Src\Asteroid.h" />
     <ClInclude Include="Src\Actor.h" />
     <ClInclude Include="Src\Component.h" />
@@ -29,6 +31,8 @@
     <ClInclude Include="Src\SpriteComponent.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Src\CircleComponent.cpp" />
+    <ClCompile Include="Src\InputComponent.cpp" />
     <ClCompile Include="Src\Asteroid.cpp" />
     <ClCompile Include="Src\Actor.cpp" />
     <ClCompile Include="Src\Component.cpp" />
@@ -63,8 +67,8 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v143</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v142</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>

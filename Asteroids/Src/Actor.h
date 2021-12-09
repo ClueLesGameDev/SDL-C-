@@ -42,6 +42,9 @@ public:
 	//Inputprocess function called from game(not overrdable)
 	void InputProcess(const uint8_t* keyState);
 
+	//for Actor-Specific Input (overridable)
+	virtual void ActorInput(const uint8_t* keyState);
+
 	//called from the game not overridable
 	void Update(float dt);
 

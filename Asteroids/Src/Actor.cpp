@@ -31,6 +31,8 @@ void Actor::InputProcess(const uint8_t* keyState)
 			comp->InputProcess(keyState);
 		}
 	}
+
+	ActorInput(keyState);
 }
 
 void Actor::Update(float dt)

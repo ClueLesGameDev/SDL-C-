@@ -10,8 +10,8 @@ public:
 
 	virtual void Update(float dt);
 
-	// Process input for this component
-	virtual void InputProcess(const uint8_t* keyState) {}
+	// Process input for this component 
+	virtual void InputProcess(const uint8_t* keyState) {};
 
 	int GetUpdateOrder() const { return mUpdateOrder;  }
 
