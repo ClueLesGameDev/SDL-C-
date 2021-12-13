@@ -43,7 +43,7 @@ public:
 	void InputProcess(const uint8_t* keyState);
 
 	//for Actor-Specific Input (overridable)
-	virtual void ActorInput(const uint8_t* keyState);
+	virtual void ActorInput(const uint8_t* keyState) {};
 
 	//called from the game not overridable
 	void Update(float dt);
@@ -57,6 +57,8 @@ public:
 	//Functions to add and remove components
 	void AddComponent(class Component* component);
 	void RemoveComponent(class Component* component);	
+
+	class Game* GetGame() const { return mGame; }
 
 private:
 

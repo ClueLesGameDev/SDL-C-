@@ -19,29 +19,32 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Src\CircleComponent.h" />
-    <ClInclude Include="Src\InputComponent.h" />
-    <ClInclude Include="Src\Asteroid.h" />
     <ClInclude Include="Src\Actor.h" />
+    <ClInclude Include="Src\Asteroid.h" />
+    <ClInclude Include="Src\CircleComponent.h" />
     <ClInclude Include="Src\Component.h" />
     <ClInclude Include="Src\Game.h" />
+    <ClInclude Include="Src\InputComponent.h" />
     <ClInclude Include="Src\Math.h" />
     <ClInclude Include="Src\MoveComponent.h" />
     <ClInclude Include="Src\Random.h" />
     <ClInclude Include="Src\SpriteComponent.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Src\CircleComponent.cpp" />
-    <ClCompile Include="Src\InputComponent.cpp" />
-    <ClCompile Include="Src\Asteroid.cpp" />
     <ClCompile Include="Src\Actor.cpp" />
+    <ClCompile Include="Src\Asteroid.cpp" />
+    <ClCompile Include="Src\CircleComponent.cpp" />
     <ClCompile Include="Src\Component.cpp" />
     <ClCompile Include="Src\Game.cpp" />
+    <ClCompile Include="Src\InputComponent.cpp" />
     <ClCompile Include="Src\main.cpp" />
     <ClCompile Include="Src\Math.cpp" />
     <ClCompile Include="Src\MoveComponent.cpp" />
     <ClCompile Include="Src\Random.cpp" />
     <ClCompile Include="Src\SpriteComponent.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="Src\Assets\Asteroid.png" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
@@ -151,7 +154,7 @@
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalLibraryDirectories>D:\GIt\GameProjects\External Dependencies\SDL_2.0\lib\x64;</AdditionalLibraryDirectories>
-      <AdditionalDependencies>SDL2.lib;SDL2main.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>SDL2.lib;SDL2main.lib;SDL2_image.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">

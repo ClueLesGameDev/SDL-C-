@@ -1,15 +1,16 @@
 #include <algorithm>
+#include "SDL_image.h"
 #include "Game.h"
 #include "Actor.h"
 #include "Asteroid.h"
 #include "SpriteComponent.h"
 #include "Random.h"
 
-Game::Game() 
+Game::Game()
 	: mWindow(nullptr), mRenderer(nullptr),
-	  mIsRunning(true), mIsUpdatingActors(false)
+	mIsRunning(true), mIsUpdatingActors(false)
 {
-	
+
 }
 
 Game::~Game()
@@ -97,7 +98,7 @@ void Game::InputProcess()
 	}
 
 	mIsUpdatingActors = true;
-	
+
 	for (auto actor : mActors)
 	{
 		actor->InputProcess(keyState);
@@ -143,12 +144,12 @@ void Game::Update()
 
 	//checking if there are dead GameObjects and sending them to the temporarylist
 	std::vector<Actor*> deadActors;
-	
+
 	for (auto actor : mActors)
 	{
 		if (actor->Getstate() == Actor::EDead)
 		{
-			deadActors.emplace_back(mActors);
+			deadActors.emplace_back(actor);
 		}
 	}
 
@@ -236,7 +237,7 @@ SDL_Texture* Game::GenerateTex(const std::string& fileName)
 
 	//checking if texture already loaded
 	auto iter = mTextures.find(fileName);
-	
+
 	if (iter != mTextures.end())
 	{
 		tex = iter->second;
@@ -264,7 +265,7 @@ SDL_Texture* Game::GenerateTex(const std::string& fileName)
 
 		mTextures.emplace(fileName.c_str(), tex);
 	}
-	
+
 	return tex;
 }
 
@@ -291,8 +292,8 @@ void Game::AddSprite(SpriteComponent* sprite)
 	int currentOrder = sprite->GetDrawOrder();
 	auto iter = mSprites.begin();
 
-    //checking if current draw order comes before any of sprites
-	for ( ; iter != mSprites.end(); ++iter)
+	//checking if current draw order comes before any of sprites
+	for (; iter != mSprites.end(); ++iter)
 	{
 		if (currentOrder < (*iter)->GetDrawOrder())
 		{
@@ -302,4 +303,12 @@ void Game::AddSprite(SpriteComponent* sprite)
 
 	//inserting at iter position
 	mSprites.insert(iter, sprite);
+
+}
+
+void Game::RemoveSprite(SpriteComponent* sprite)
+{
+	// (We can't swap because it ruins ordering)
+	auto iter = std::find(mSprites.begin(), mSprites.end(), sprite);
+	mSprites.erase(iter);
 }

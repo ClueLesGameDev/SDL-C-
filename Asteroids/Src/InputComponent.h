@@ -14,7 +14,7 @@ public:
 	float GetAngularSpeed() const { return mMaxAngularSpeed; }
 
 	void SetForwardSpeed(float forwardSpeed) { mForwardSpeed = forwardSpeed; }
-	void SetForwardSpeed(float angularSpeed) { mAngularSpeed = angularSpeed; }
+	void SetAngularSpeed(float angularSpeed) { mAngularSpeed = angularSpeed; }
 
 private:
 
